@@ -1,0 +1,9 @@
+body {
+    background-color: seagreen;
+}
+
+.main-container {
+    background-color: azure;
+    border: solid midnightblue 3px;
+    margin: auto;
+}
