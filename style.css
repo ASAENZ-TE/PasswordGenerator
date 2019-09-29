@@ -6,4 +6,51 @@ body {
     background-color: azure;
     border: solid midnightblue 3px;
     margin: auto;
+    width: 60%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#h1 {
+    color:white;
+    background-color: black;
+    text-align: center;
+    margin: auto;
+    font-size: 55px;
+    padding: 10px;
+    box-sizing: border-box,
+}
+
+#h2 {
+    text-align: center;
+    font-size: 35px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.buttons-text {
+    text-align: center;
+    margin: auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#generate {
+    width: 40%;
+    margin: 5%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#copy {
+    width: 40%;
+    margin: 5%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#password {
+    width: 50%;
+    margin: 5%;
+    box-sizing: border-box;
 }
