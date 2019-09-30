@@ -8,7 +8,7 @@ function generatePassword() {
  document.getElementById("display").value = password;
 }
 
-document.getElementById("length").innerHTML = "length : 21";
+document.getElementById("length").innerHTML = "length : 50";
 
 document.getElementById("slider").oninput = function() {
   if (document.getElementById("slider").value >0){
