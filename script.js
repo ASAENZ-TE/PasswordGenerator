@@ -7,3 +7,20 @@ function generatePassword() {
  }
  document.getElementById("display").value = password;
 }
+
+document.getElementById("length").innerHTML = "length : 21";
+
+document.getElementById("slider").oninput = function() {
+  if (document.getElementById("slider").value >0){
+    document.getElementById("length").innerHTML = "length: " + document.getElementById("slider").value;
+  }
+}
+
+function copyPassword() {
+  
+  document.getElementById("display").select();
+  
+  document.execCommand("copy");
+
+  alert("New password has been copied to clipboard!");
+}
