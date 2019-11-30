@@ -1,26 +1,59 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Password Generator </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <div class="main-container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> Password Generator! </title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+
+    <div class="container rounded">
+      
         <header>
-        <h1 id="h1">Password Generator</h1>
-        </header>
-        <h2 id="h2"> Let's make you a super safe password! </h2>
-        <div class="buttons-text">
-            <button onclick="generatePassword()" id="generate"> Generate Password! </button>
-            <button onclick="copyPassword()" id="copy"> Copy to Clipboard! </button>
-            <input type="text" id="display" placeholder="Your password will go here!">
-            <br>
-            <input type="range" min="8" max="128" name="slider" id="slider">
-            <div id="length"></div>
-        </div>
+        <h1> Secure Password Generator! </h1>
+      </header>
+
+      <h2> Let's make you a brand new, super safe password! </h2>
+      <br>
+      
+      <p>
+
+        Let's Start With A Password Length Between (8 - 128) Characters!:
+        <input type="number" id="pwLength" value="8" min="8" max="128" /><br />
+        <br />
+
+        Uppercase:<input type="checkbox" id="capLet" />
+
+        Lowercase:<input type="checkbox" id="lowLet" class="lowCase" />
+
+        Number:<input type="checkbox" id="numB" />
+
+        Special Character:<input type="checkbox" id="spChar" />
+
+      </p>
+
+      <textarea
+        readonly
+        id="password"
+        placeholder=" Your new password will go here! "
+      ></textarea>
+      <br />
+
+
+      <div class="button">
+
+        <button id="generate">
+          Generate Password
+        </button>
+        <button onclick="copyPassword()" type="button" id="copy">
+          Copy to Clipboard
+
+        </button>
+      </div>
+     
     </div>
-    <script src="script.js"></script>
-</body>
+    <script src="script.js"> </script>
+  </body>
 </html>

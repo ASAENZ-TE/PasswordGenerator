@@ -1,26 +1,36 @@
-function generatePassword() {
-  var pwLength = document.querySelector("#slider").value;
-  var options = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]\:;?><,./-=";
-  var password = "";
-  for (var i = 0; i <= pwLength; i++) {
-      password += options.charAt(Math.floor(Math.random()*options.length -1));
- }
- document.getElementById("display").value = password;
-}
-
-document.getElementById("length").innerHTML = "length : 50";
-
-document.getElementById("slider").oninput = function() {
-  if (document.getElementById("slider").value >0){
-    document.getElementById("length").innerHTML = "length: " + document.getElementById("slider").value;
+var upCas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowCas = "abcdefghijklmnopqrstuvwxyz";
+var charSp = "!@#$%^&*:?>+";
+var num = "1234567890";
+var fill = "";
+var pwLengthV = document.getElementById("pwLength");
+var numBox = document.getElementById("numB");
+var upBox = document.getElementById("capLet");
+var lowBox = document.getElementById("lowLet");
+var spBox = document.getElementById("spChar");
+var generate = document.getElementById("generate");
+var copy = document.getElementById("copy");
+var password = document.getElementById("password");
+generate.addEventListener("click", function(event) {
+  var characters = fill;
+  upBox.checked ? (characters += upCas) : " ";
+  lowBox.checked ? (characters += lowCas) : " ";
+  numBox.checked ? (characters += num) : " ";
+  spBox.checked ? (characters += charSp) : " ";
+  password.value = passwordGenerator(pwLengthV.value, characters);
+});
+function passwordGenerator(len, characters) {
+  var pWord = " ";
+  for (var i = 0; i < len; i++) {
+    pWord += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
   }
+  return pWord;
 }
-
-function copyPassword() {
-  
-  document.getElementById("display").select();
-  
+function copyPassword(){
+  var copyPassword = document.getElementById("password");
+  copyPassword.select();
   document.execCommand("copy");
-
-  alert("New password has been copied to clipboard!");
+  alert("Your password has been successfully saved to the clipboard!");
 }
